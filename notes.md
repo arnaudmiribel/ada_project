@@ -23,7 +23,7 @@ Gives good strategies to do data mining on this kind of papers.
 |API|Rate limits|Fields|
 |:-:|:-:|:-:|
 |arXiv|No limit|Computer Science, Physics & Maths
-|CORE|~ < 1 request per second| Aggregation of more
+|CORE|~ < 1 request per  10 second| Aggregation of more
 
 > `CORE` aggregates research papers from data providers from all over the world including institutional repositories, subject-repositories and journal publishers. This process, which is called harvesting, allows us to offer search, text-mining and analytical capabilities over not only metadata, but also the full-text of the research papers making `CORE` a unique service in the research community.
 
