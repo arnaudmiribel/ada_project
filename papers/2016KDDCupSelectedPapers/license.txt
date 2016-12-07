@@ -1,0 +1,85 @@
+
+MICROSOFT ACADEMIC GRAPH API TERMS OF USE 
+
+
+THIS IS AN AGREEMENT BETWEEN YOU AND MICROSOFT  
+These Terms of Use (“TOU”) are an agreement between you and Microsoft Corporation (“Microsoft” or “we”). This TOU governs your use of the Microsoft Academic Graph API, including data received through the API (“API”) only. The API, which is operated by Microsoft (or its affiliates), enables you to obtain certain data from Microsoft Academic Graph to use in your own application. This TOU does not govern your use of other Microsoft products, services or web sites.  
+ 
+You represent that you are at least 18 years old or you represent a company or other entity and have the authority to enter into this TOU on behalf of the company or entity. Your use of the API constitutes your acceptance of this TOU, the Privacy Statement and registration guidelines, without modification. Microsoft reserves the right to update the TOU at any time in its discretion without notice to you. You are responsible for regularly reviewing this TOU for any changes. Your use of the API after the effective date of such changes shall constitute your continuing acceptance of this TOU, as amended from time to time.  
+ 
+Please note that we do not provide warranties for the API. The TOU also limits our liability. These terms are in the “Disclaimer of Liability and Warranty” section below, and we ask you to read it carefully.  
+ 
+PERSONAL USE LIMITATION  
+ 
+You may use this API and any data received through the API for any non-revenue/no-fee academic purpose, subject to the restrictions in this TOU. Some purposes which can be non-revenue/no-fee academic purposes are teaching, academic research, public demonstrations and personal experimentation. You may use the API to build your own application or service leveraging the data and functions of Microsoft Academic Graph.  
+ 
+You may not use this API, the data received through the API, or any derivative works in any form for commercial purposes. Examples of commercial purposes would be running business operations, licensing, leasing, distributing, or selling content obtained from the API, distributing the API for use with commercial products, using the API in the creation or use of commercial products or any other activity which purpose is to procure a commercial gain to you or others.  
+ 
+ 
+ 
+YOUR RESPONSIBILITIES  
+ 
+You, and any third party working on behalf of you, will not:  
+ 
+(a) Generate revenue from use of the API or use it for any commercial or non-academic purposes; 
+(b) Bypass Microsoft’s tools or services to interfere or attempt to interfere with the proper working of Microsoft Academic Graph or the API;  
+(c) Take any action that imposes a disproportionately large burden on use of the API or Microsoft’s infrastructure, including using the API on more than a reasonable frequency, as determined by Microsoft in its sole discretion; or  
+(d) Engage in any unlawful practices in connection with your use of the API.  
+ 
+ 
+FEEDBACK 
+ 
+If you give Microsoft feedback, you give Microsoft an irrevocable, perpetual, sublicensable right to use, share, and commercialize your feedback in any way and for any purpose at no charge. You also give to third parties any patent rights in your feedback needed for their products, technologies, and Services to use or interface with any specific parts of a Microsoft software or Service at no charge. You will not give feedback that is subject to a license or other obligation that requires Microsoft to grant or pass through any rights or make any disclosures or payments to third parties. These rights survive these terms. 
+ 
+ACCESS  
+ 
+Microsoft will provide you with access to the API so long as you comply with this Agreement, provided that Microsoft may stop offering the API to you or any other party at any time in its sole discretion.  
+ 
+REMOVAL OF CONTENT  
+ 
+Microsoft can direct you to remove or destroy data received through the API at any time in its sole discretion. Data must be removed or destroyed within five (5) days.  
+ 
+TERMINATION  
+ 
+(a) Termination by Microsoft. Microsoft may terminate or suspend this Agreement or your access to the API at any time in its sole discretion.  
+(b) Termination by you. You may stop using the API if you are dissatisfied with any aspect of the API.  
+(c) Survival. The sections entitled Your responsibilities, Termination, Disclaimer of warranties, Indemnity, Limitations of liability, Reservation of rights and Miscellaneous will survive expiration or termination of this Agreement.  
+ 
+COPYRIGHT CLAIM NOTICE AND PROCEDURE  
+ 
+Pursuant to Title 17, United States Code, Section 512(c)(2), notifications of claimed copyright infringement should be sent to the Service provider's designated agent. ALL INQUIRIES NOT RELEVANT TO THE FOLLOWING PROCEDURE WILL RECEIVE NO RESPONSE. For details and contact information see Notice and Procedure for Making Claims of Copyright Infringement at http://www.microsoft.com/info/cpyrtinfrg.htm. 
+ 
+DISCLAIMER OF WARRANTIES  
+ 
+YOU USE THE API AND ANY RELATED PRODUCTS AT YOUR OWN RISK. THE API AND ANY RELATED PRODUCTS ARE PROVIDED “AS IS” AND WITH ALL DEFECTS. EXCEPT AS PROVIDED HEREIN, MICROSOFT EXPRESSLY DISCLAIMS ALL OTHER EXPRESS, IMPLIED, OR STATUTORY WARRANTIES. THIS INCLUDES THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, LACK OF VIRUSES, QUIET ENJOYMENT, SCOPE OF LICENSE, LACK OF ERRORS, AND SATISFACTORY CONDITION OR QUALITY.  
+ 
+INDEMNITY  
+ 
+You will indemnify and hold Microsoft and its affiliates, agents and employees, harmless from all loss, liability, and expense (including reasonable attorneys' fees) from any claims, proceedings or suits due to either your breach of this Agreement or your use of the API. You will be solely responsible for defending all such claims but Microsoft may participate with counsel it selects. If Microsoft participates with its own counsel, you will reimburse Microsoft for all reasonable costs and fees incurred. You will not agree to any settlement imposing any obligation or liability on Microsoft without Microsoft’s prior written consent.  
+LIMITATION OF LIABILITY TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL MICROSOFT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE, SPECIAL, OR EXEMPLARY DAMAGES ARISING OUT OF OR THAT RELATE IN ANY WAY TO THIS AGREEMENT OR ITS PERFORMANCE. THIS EXCLUSION WILL APPLY REGARDLESS OF THE LEGAL THEORY UPON WHICH ANY CLAIM FOR SUCH DAMAGES IS BASED, WHETHER THE PARTIES HAD BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, WHETHER SUCH DAMAGES WERE REASONABLY FORESEEABLE, OR WHETHER APPLICATION OF THE EXCLUSION CAUSES ANY REMEDY TO FAIL OF ITS ESSENTIAL PURPOSE. MICROSOFT WILL NOT BE LIABLE TO YOU FOR ANY DIRECT DAMAGES IN EXCESS OF $500.  
+ 
+RESERVATION OF RIGHTS  
+ 
+Microsoft reserves all rights in the API and associated services and technologies, subject to the licenses granted in this Agreement.  
+ 
+MISCELLANEOUS  
+ 
+(a) (a) Notices. Microsoft may send you, in electronic form, information about Microsoft Academic Graph API, additional information, and information the law requires Microsoft to provide. Microsoft may provide required information to you by email at the address you specified when you signed up for the Service. Notices emailed to you will be deemed given and received when the email is sent. If you don't consent to receive notices electronically, you must stop using Microsoft Academic Graph API.  
+ 
+(b) Jurisdiction and governing Law. The laws of the State of Washington govern this Agreement. If federal jurisdiction exists, the parties consent to exclusive jurisdiction and venue in the federal courts in King County, Washington. If not, the parties consent to exclusive jurisdiction and venue in the Superior Court of King County, Washington.  
+ 
+(c) Export. The Microsoft Academic Graph API are subject to United States export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to API. These laws include restrictions on destinations, end users and end use. For additional information, see www.microsoft.com/exporting.  
+ 
+(d) Attorneys’ fees. If either Microsoft or you employ attorneys to enforce any rights arising out of or relating to this Agreement, the prevailing party will be entitled to recover its reasonable attorneys' fees, costs, and other expenses, including the costs and fees incurred on appeal or in a bankruptcy or similar action.  
+ 
+(e) Assignment. You will not assign, sublicense, or otherwise dispose of this Agreement or your right to access the API without Microsoft’s prior written approval.  
+ 
+(f) Waiver. A party’s delay or failure to exercise any right or remedy will not result in a waiver of that or any other right or remedy.  
+ 
+(g) Severability. If any court of competent jurisdiction determines that any provision of this Agreement is illegal, invalid or unenforceable, the remaining provisions will remain in full force and effect.  
+ 
+(h) Entire agreement. This Agreement (including any exhibits) is the entire Agreement between the parties regarding its subject matter. It replaces all prior agreements, communications and representations regarding its subject matter.  
+ 
+COPYRIGHT NOTICE; TRADEMARKS © 2015 Microsoft Corporation. All rights reserved. Microsoft, and/or other Microsoft products and services referenced herein may also be either trademarks or registered trademarks of Microsoft in the United States and/or other countries. 
+ 
+Updated June  2015 
