@@ -78,7 +78,7 @@ __GOOD NEWS__ : seems like we can find interesting topics in an abstract snapsho
 - blue : looks like IT , electrical engineering abstracts (topics 0, 9, 10)
 - orange : looks like physics (topics 2, 8)
 - yellow : chemistry, materials (topics 1, 7)
-- gray : trash topics (3, 4, 6, 5)
+- gray : trash topics (3, 4, 6, 5) - can be improved by removing generic terms of research papers (methods, system, invention, present, composition, part, body, end, first, second ...)
 
 ## Remains to do : 
 
@@ -87,6 +87,16 @@ __GOOD NEWS__ : seems like we can find interesting topics in an abstract snapsho
 	- how do we filter such that we fit in the subject ? (is filtering for Swiss patents enough?) - for academic papers, looks like EPFL/ETHZ is enough
 	- do want to have a long range of years for data (so that we can see the evolution of innovation accross time) ? how many years ? then we should select random subsets of patents every year ?
 
+
+-  nlp pipeline :
+	- append the stop words list with generic terms of research papers in order to filter them out and maybe avoid having too many trash topics
+
+- topic extraction : 
+	- test to see what's the optimal number of topics
+
 - data visualization :
-	- choose which dimension reduction technique makes more sense
-	- handle a Bokeh server with a `Choose Year` slider in order to travel accross time. 
+	- for semantic map : 
+		- choose which dimension reduction technique makes the best visualization
+		- handle a Bokeh server with a `Choose Year` slider in order to travel accross time. 
+	- for the map  : should be quick using the cloropleth homework
+	- for the network : bonus !
