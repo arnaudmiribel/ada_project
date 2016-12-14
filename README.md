@@ -72,3 +72,21 @@ __Using tSNE__
 
 __Using Fischer LDA__  
 <img src="viz/fischer_lda2.png" width=500px>
+
+__GOOD NEWS__ : seems like we can find interesting topics in an abstract snapshot. We should now have a precise idea of all the data we want to use.
+
+- blue : looks like IT , electrical engineering abstracts (topics 0, 9, 10)
+- orange : looks like physics (topics 2, 8)
+- yellow : chemistry, materials (topics 1, 7)
+- gray : trash topics (3, 4, 6, 5)
+
+## Remains to do : 
+
+- select data : 
+	- how many patents can we hold for topic extraction ?
+	- how do we filter such that we fit in the subject ? (is filtering for Swiss patents enough?) - for academic papers, looks like EPFL/ETHZ is enough
+	- do want to have a long range of years for data (so that we can see the evolution of innovation accross time) ? how many years ? then we should select random subsets of patents every year ?
+
+- data visualization :
+	- choose which dimension reduction technique makes more sense
+	- handle a Bokeh server with a `Choose Year` slider in order to travel accross time. 
