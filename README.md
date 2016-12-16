@@ -97,6 +97,6 @@ __GOOD NEWS__ : seems like we can find interesting topics in an abstract snapsho
 - data visualization :
 	- for semantic map : 
 		- choose which dimension reduction technique makes the best visualization
-		- handle a Bokeh server with a `Choose Year` slider in order to travel accross time. 
+		- handle a Bokeh server with a `Choose Year` slider in order to travel accross time. [fun resource in the idea of what we want to do](http://olihb.com/2016/03/24/15-years-of-news-analyzing-cnn-transcripts-visualizing-topics/)
 	- for the map  : should be quick using the cloropleth homework
 	- for the network : bonus !
