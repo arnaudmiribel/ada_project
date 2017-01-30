@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patents History</title>
+  <link rel="stylesheet" href="./css/font-awesome.min.css">
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <script>
+  var i = 0;
+  var j = 0;
+  var foto = new Array(49);
+  var frame = new Array(49);
+  var timer;
+  var pause;
+
+
+  for (i = 0; i < 49; i++) {
+    frame[i] =  "./viz/" + String(1964+i) + ".html"
+    foto[i] = "./imgs/" + String(1964+i) + ".png"
+  }
+
+
+  function show() {
+    document.getElementById("slideshow").src = foto[i];
+
+  }
+
+  function zoom() {
+    document.getElementById("frameshow").src = frame[j];
+    i=j;
+    show();
+  }
+
+  function play(){
+    if (timer) {
+      // stop
+      clearInterval( timer );
+      timer=null;
+    }
+    else {
+      timer = setInterval("next(true)",200);
+    }
+  }
+
+  function stop(){
+    i=0;
+    j=0;
+    show();
+    zoom()
+  }
+
+  function pause(){
+    if (timer) {
+      j=i;
+      zoom();
+      clearInterval( timer );
+      timer=null;
+    }
+  }
+
+  function changeDate(){
+    year = document.getElementById("year").value;
+    j = year - 1964;
+    zoom();
+
+  }
+
+  Number.prototype.mod = function(n) {
+    return ((this%n)+n)%n;
+  };
+
+  function previous(){
+    i = (i - 1).mod(foto.length);
+    j = i;
+    show();
+    zoom();
+  }
+
+  function next(auto){
+    i = (i + 1).mod(foto.length);
+    j = i
+    show();
+    if (!auto) {
+      zoom();
+    }
+
+  }
+
+  </script>
+</head>
+
+
+<body>
+  <div class="container">
+
+
+    <h1 style="margin-bottom:20px"> <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Swiss Patent Topics </h1>
+
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <p>What do patents talk about ? One could go manually over all the
+          patents, but we have nearly <strong>50'000</strong> of them. So we
+          tried to <strong>extract topics</strong> on patents abstracts and visualize what
+          abstracts of patents were talking about. Our study here involves
+          <strong>56'611</strong> patents, from 1964 to 2013. All these patents applications
+          were done in Switzerland.<p>
+            <p>Our full pipeline involves :
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Collapsible Group Item #1
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Collapsible Group Item #2
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Collapsible Group Item #3
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+
+              <ul class="list-group">
+                <li class="list-group-item">NLP Pre Processing</li>
+                <li class="list-group-item">Latent Dirichlet Allocation Topic Extraction</li>
+                <li class="list-group-item">Supervised Dimension Reduction (Fischer Linear Discriminant Analysis)</li>
+                <li class="list-group-item">Visualization with Bokeh</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <h3> Total evolution </h3><br>
+          <div style="margin-left:70px">
+            <i class="fa fa-step-backward fa-2x" onclick="previous()"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-play-circle fa-2x" onclick="play()"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-pause-circle fa-2x" onclick="pause()"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-step-forward fa-2x" onclick="next()"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-stop-circle fa-2x" onclick="stop()"></i>
+          </div>
+          <br>
+          <img src="./imgs/1964.png" style="height:220px;" id="slideshow" alt="slideshow" />
+
+          <div class="alert alert-info" style="margin:60px -50px 0px 20px;">
+            <strong>Developed for Applied Data Analysis course @ EPFL</strong><br><br>
+            Soufiane El Badraoui<br>
+            Arnaud Miribel<br>
+            Yu Yamashita<br><br>
+            See more <a href="http://ada.epfl.ch">here</a> or <a href="http://www.github.com/arnaudmiribel/ada_project/">here</a>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-9">
+          <h3 style="margin-left:88px"> <i class="icon-zoom-in"></i> Zoom into one year </h3>
+          <div class="form" style="margin-left:88px">
+            Year:<br>
+            <input type="text" id="year" value="" style="width:100px">&nbsp;&nbsp;
+            <button type="button" class="btn btn-default" onclick="changeDate()">
+              Apply
+            </button>
+          </div>
+
+          <iframe src="viz/1964.html" style="height:700px; width:800px" id="frameshow" alt="frameshow" frameBorder="0"/>
+        </div>
+
+      </div>
+
+
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="./js/bootstrap.min.js"></script>
+    </body>
+
+    </html>
