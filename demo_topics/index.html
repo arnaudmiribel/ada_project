@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8" />
+  <title>Patents History</title>
+  <link rel="stylesheet" href="./css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script>
+  var i = 0;
+  var j = 0;
+  var foto = new Array(49);
+  var frame = new Array(49);
+  var timer;
+  var pause;
+
+
+  for (i = 0; i < 49; i++) {
+    frame[i] =  "./viz/" + String(1964+i) + ".html"
+    foto[i] = "./imgs/" + String(1964+i) + ".png"
+  }
+
+
+  function show() {
+    document.getElementById("slideshow").src = foto[i];
+
+  }
+
+  function zoom() {
+    document.getElementById("frameshow").src = frame[j];
+    i=j;
+    show();
+  }
+
+  function play(){
+    if (timer) {
+      // stop
+      clearInterval( timer );
+      timer=null;
+    }
+    else {
+      timer = setInterval("next(true)",200);
+    }
+  }
+
+  function stop(){
+    i=0;
+    j=0;
+    show();
+    zoom()
+  }
+
+  function pause(){
+    if (timer) {
+      j=i;
+      zoom();
+      clearInterval( timer );
+      timer=null;
+    }
+  }
+
+  function changeDate(){
+    year = document.getElementById("year").value;
+    j = year - 1964;
+    zoom();
+
+  }
+
+  Number.prototype.mod = function(n) {
+    return ((this%n)+n)%n;
+  };
+
+  function previous(){
+    i = (i - 1).mod(foto.length);
+    j = i;
+    show();
+    zoom();
+  }
+
+  function next(auto){
+    i = (i + 1).mod(foto.length);
+    j = i
+    show();
+    if (!auto) {
+      zoom();
+    }
+
+  }
+
+  </script>
+</head>
+
+
+<body>
+  <div class="container">
+
+
+    <h1 style="margin-bottom:20px"> <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Swiss Patent History </h1>
+
+    <div class="col-md-3">
+      <h3> Total evolution </h3><br>
+      <div style="margin-left:70px">
+        <i class="fa fa-step-backward fa-2x" onclick="previous()"></i>&nbsp;&nbsp;&nbsp;
+        <i class="fa fa-play-circle fa-2x" onclick="play()"></i>&nbsp;&nbsp;&nbsp;
+        <i class="fa fa-pause-circle fa-2x" onclick="pause()"></i>&nbsp;&nbsp;&nbsp;
+        <i class="fa fa-step-forward fa-2x" onclick="next()"></i>&nbsp;&nbsp;&nbsp;
+        <i class="fa fa-stop-circle fa-2x" onclick="stop()"></i>
+      </div>
+      <br>
+      <img src="./imgs/1964.png" style="height:220px;" id="slideshow" alt="slideshow" />
+
+      <div class="alert alert-info" style="margin:60px -50px 0px 20px;">
+        <strong>Developed for Applied Data Analysis course @ EPFL</strong><br><br>
+        Soufiane El Badraoui<br>
+        Arnaud Miribel<br>
+        Yu Yamashita<br><br>
+        See more <a href="http://ada.epfl.ch">here</a> or <a href="http://www.github.com/arnaudmiribel/ada_project/">here</a>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-9">
+      <h3 style="margin-left:88px"> <i class="icon-zoom-in"></i> Zoom into one year </h3>
+      <div class="form" style="margin-left:88px">
+        Year:<br>
+        <input type="text" id="year" value="" style="width:100px">&nbsp;&nbsp;
+        <button type="button" class="btn btn-default" onclick="changeDate()">
+          Apply
+        </button>
+      </div>
+
+      <iframe src="viz/1964.html" style="height:700px; width:800px" id="frameshow" alt="frameshow" frameBorder="0"/>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
