@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Bootstrap 101 Template</title>
 
-  <meta charset="utf-8" />
-  <title>Patents History</title>
+  <!-- Bootstrap -->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="./css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Script for players -->
   <script>
   var i = 0;
   var j = 0;
@@ -17,7 +23,7 @@
 
 
   for (i = 0; i < 49; i++) {
-    frame[i] =  "./viz/" + String(1964+i) + ".html"
+    frame[i] =  "./frames/" + String(1964+i) + ".html"
     foto[i] = "./imgs/" + String(1964+i) + ".png"
   }
 
@@ -89,53 +95,148 @@
   }
 
   </script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
 </head>
-
-
 <body>
+
   <div class="container">
+    <h1 style="margin-bottom:20px; font-size:70px">History of Patents in Switzerland</h1>
+    <h1 style="margin-bottom:20px"> <i class="fa fa-globe" aria-hidden="true"></i> World Patent Evolution </h1>
+    <h1 style="margin-bottom:20px"> <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Swiss Patent Topics </h1>
 
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <p>What do patents talk about ? One could go manually over all the
+          patents, but we have nearly <strong>50'000</strong> of them. So we
+          tried to <strong>extract topics</strong> on patents abstracts and visualize what
+          abstracts of patents were talking about. Our study here involves
+          <strong>56'611</strong> patents, from 1964 to 2013. All these patents applications
+          were done in Switzerland.<p>
+            <p>Our full pipeline involves :
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        1. NLP Pre Processing
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body"> We have a few treatments to apply to our text data
+                      <ul>
+                        <li>Tokenize</li>
+                        <li>Normalize : put to lower case</li>
+                        <li>Lemmatize : keep only lemmas</li>
+                        <li>Filter out stop words</li>
+                        <li>Filter out some Part of Speech tags</li>
+                      </ul>
 
-    <h1 style="margin-bottom:20px"> <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Swiss Patent History </h1>
+                      We normalize the text data (put to lower capital), remove stop words and filter the part of speechs.
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        2. Latent Dirichlet Allocation Topic Extraction
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                      We apply a LDA topic extraction algorithm, seeking for
+                      <strong>30</strong> topics. Looking at the <i>topics per patent</i> distribution, we see that there are 17 trash topics. At that point
+                      we decided to remove them and also all the patents that were maximized by one of these topics. This reduced our data to 14,194 patents, and
+                      13 topics (there were also some duplicates). We append 13 topic centers to our 14,194 points : they are fake patents that have 1 for a topic
+                      and 0 for all others. Intuitively, they are the heart of the topic.
 
-    <div class="col-md-3">
-      <h3> Total evolution </h3><br>
-      <div style="margin-left:70px">
-        <i class="fa fa-step-backward fa-2x" onclick="previous()"></i>&nbsp;&nbsp;&nbsp;
-        <i class="fa fa-play-circle fa-2x" onclick="play()"></i>&nbsp;&nbsp;&nbsp;
-        <i class="fa fa-pause-circle fa-2x" onclick="pause()"></i>&nbsp;&nbsp;&nbsp;
-        <i class="fa fa-step-forward fa-2x" onclick="next()"></i>&nbsp;&nbsp;&nbsp;
-        <i class="fa fa-stop-circle fa-2x" onclick="stop()"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        3. Supervised Dimension Reduction (Fischer Linear Discriminant Analysis)
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                      Now we wanted to visualize this data using a dimension reduction. Considering our task is <strong>supervised</strong> because we assign the
+                      topic that maximizes the <i>topics per patent</i> distribution, we can ask a <strong>supervised dimension reduction</strong> algorithm.
+                      That's exactly what <strong>Fischer Linear Discriminant Algorithm</strong> does. It projects the data into a lower-space where the split between
+                      classes is maximized.
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingFour">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        4. Visualization with Bokeh
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel-body">
+                      <a href="http://bokeh.pydata.org/en/latest/">Bokeh</a> is a
+                      Python interactive visualization library that targets modern web browsers for presentation. Its goal is to provide
+                      elegant, concise construction of novel graphics in the style of D3.js, and to extend this capability with
+                      high-performance interactivity over very large or streaming datasets. Bokeh can help anyone who would
+                      like to quickly and easily create interactive plots, dashboards, and data applications.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <h3> Total evolution </h3><br>
+          <div style="margin-left:70px">
+            <i class="fa fa-step-backward fa-2x" onclick="previous()"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-play-circle fa-2x" onclick="play()"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-pause-circle fa-2x" onclick="pause()"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-step-forward fa-2x" onclick="next()"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-stop-circle fa-2x" onclick="stop()"></i>
+          </div>
+          <br>
+          <img src="./imgs/1964.png" style="height:220px;" id="slideshow" alt="slideshow" />
+
+          <div class="alert alert-info" style="margin:60px -50px 0px 20px;">
+            <strong>Developed for Applied Data Analysis course @ EPFL</strong><br><br>
+            Soufiane El Badraoui<br>
+            Arnaud Miribel<br>
+            Yu Yamashita<br><br>
+
+            See more <a href="http://ada.epfl.ch"> here</a> or <i class="fa fa-github" aria-hidden="true"></i> <a href="http://www.github.com/arnaudmiribel/ada_project/">here</a>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-9">
+          <h3 style="margin-left:88px"> <i class="icon-zoom-in"></i> Zoom into one year </h3>
+          <div class="form" style="margin-left:88px">
+            Year:<br>
+            <input type="text" id="year" value="" style="width:100px">&nbsp;&nbsp;
+            <button type="button" class="btn btn-default" onclick="changeDate()">
+              Apply
+            </button>
+          </div>
+
+          <iframe src="frames/1964.html" style="height:700px; width:800px" id="frameshow" alt="frameshow" frameBorder="0"/>
+        </div>
+
       </div>
-      <br>
-      <img src="./imgs/1964.png" style="height:220px;" id="slideshow" alt="slideshow" />
 
-      <div class="alert alert-info" style="margin:60px -50px 0px 20px;">
-        <strong>Developed for Applied Data Analysis course @ EPFL</strong><br><br>
-        Soufiane El Badraoui<br>
-        Arnaud Miribel<br>
-        Yu Yamashita<br><br>
-        See more <a href="http://ada.epfl.ch">here</a> or <a href="http://www.github.com/arnaudmiribel/ada_project/">here</a>
-
-      </div>
-
-    </div>
-
-    <div class="col-md-9">
-      <h3 style="margin-left:88px"> <i class="icon-zoom-in"></i> Zoom into one year </h3>
-      <div class="form" style="margin-left:88px">
-        Year:<br>
-        <input type="text" id="year" value="" style="width:100px">&nbsp;&nbsp;
-        <button type="button" class="btn btn-default" onclick="changeDate()">
-          Apply
-        </button>
-      </div>
-
-      <iframe src="viz/1964.html" style="height:700px; width:800px" id="frameshow" alt="frameshow" frameBorder="0"/>
-    </div>
-
-  </div>
-
-</body>
-
-</html>
+    </body>
+    </html>
