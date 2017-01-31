@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>History of Patents in Switzerland</title>
+
+  <!-- Bootstrap -->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="./css/font-awesome.min.css">
+
+  <!-- Script for players -->
+  <script>
+  var i = 0;
+  var j = 0;
+  var foto = new Array(49);
+  var frame = new Array(49);
+  var timer;
+  var pause;
+
+
+  for (i = 0; i < 49; i++) {
+    frame[i] =  "./frames/" + String(1964+i) + ".html"
+    foto[i] = "./imgs/" + String(1964+i) + ".png"
+  }
+
+
+  function show() {
+    document.getElementById("slideshow").src = foto[i];
+
+  }
+
+  function zoom() {
+    document.getElementById("frameshow").src = frame[j];
+    i=j;
+    show();
+  }
+
+  function play(){
+    if (timer) {
+      // stop
+      clearInterval( timer );
+      timer=null;
+    }
+    else {
+      timer = setInterval("next(true)",200);
+    }
+  }
+
+  function stop(){
+    i=0;
+    j=0;
+    show();
+    zoom()
+  }
+
+  function pause(){
+    if (timer) {
+      j=i;
+      zoom();
+      clearInterval( timer );
+      timer=null;
+    }
+  }
+
+  function changeDate(){
+    year = document.getElementById("year").value;
+    j = year - 1964;
+    zoom();
+
+  }
+
+  Number.prototype.mod = function(n) {
+    return ((this%n)+n)%n;
+  };
+
+  function previous(){
+    i = (i - 1).mod(foto.length);
+    j = i;
+    show();
+    zoom();
+  }
+
+  function next(auto){
+    i = (i + 1).mod(foto.length);
+    j = i
+    show();
+    if (!auto) {
+      zoom();
+    }
+
+  }
+
+  </script>
+
+  <script>
+      var k = 0;
+      var l = 0;
+      var foto1 = new Array(106);
+      var frame1 = new Array(106);
+      var timer1;
+      var pause1;
+
+
+      for (k = 0; k < 106; k++) {
+          frame1[k] = "./CH/map" + String(1910 + k) + "_CH.png"
+          foto1[k] = "./WW/map" + String(1910 + k) + "_WW.png"
+      }
+
+
+      function show1() {
+          document.getElementById("slideshow1").src = foto1[k];
+      }
+
+      function zoom1() {
+          document.getElementById("slideshow2").src = frame1[k];
+          k = l;
+          show1();
+      }
+
+      function play1() {
+          if (timer1) {
+              // stop
+              clearInterval(timer1);
+              timer1 = null;
+          } else {
+              timer1 = setInterval("next1(true)", 200);
+          }
+      }
+
+      function stop1() {
+          k = 0;
+          l = 0;
+          show1();
+          zoom1()
+      }
+
+      function pause1() {
+          if (timer1) {
+              l = k;
+              zoom1();
+              clearInterval(timer1);
+              timer1 = null;
+          }
+      }
+
+      function changeDate1() {
+          year = document.getElementById("year").value;
+          l = year - 1910;
+          k = l;
+          zoom1();
+          show1();
+
+      }
+
+      Number.prototype.mod = function(n) {
+          return ((this % n) + n) % n;
+      };
+
+      function previous1() {
+          k = (k - 1).mod(foto1.length);
+          l = k;
+          show1();
+          zoom1();
+      }
+
+      function next1(auto) {
+          k = (k + 1).mod(foto1.length);
+          l = (l + 1).mod(frame1.length)
+          show1();
+          zoom1();
+          if (!auto) {
+              zoom1();
+          }
+
+      }
+  </script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+
+    <!-- PART 0 : HEADER -->
+    <div style="float:right">
+    <img src="./imgs/adalogo.png" style="height:50px; margin-top:80px">
+    <img src="http://mediacom.epfl.ch/files/content/sites/mediacom/files/EPFL-Logo.jpg" style="height:50px; margin:80px 0 0 40px">
+    <p style="margin-top:10px">© Soufiane, Arnaud, Yu. <br>Powered by <a src="http://www.getbootstrap.com">Bootstrap</a></p>
+  </div>
+    <h1 style="margin-bottom:20px; font-size:130px">History of Patents in Switzerland</h1>
+    <h3 style="margin-bottom: 250px;">31.01.2017 - Soufiane, Arnaud & Yu</h3>
+
+
+
+    <!-- PART 1 : SOUFIANE -->
+    <h1 style="margin-bottom:20px; margin-top:40px;"> <i class="fa fa-question-circle" aria-hidden="true"></i> Patents : Motivation </h1>
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <p>
+          Patents are a truely fascinating subject because they capture <strong>a lot of information</strong>. Indeed,
+          they enable to identify the <strong>state-of-the-art</strong> in a specific technological field,
+          and they also reveal the countries <strong>competitiveness</strong>. With almost <strong>1,000,000</strong> new patent documents
+          published every year, it is impossible to do a manual analysis on this particular data, that's why
+          we thought it was a great support to try the tools learnt during the <strong>Applied Data Analysis</strong> course.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <center>
+          <img src="./imgs/n_patentsCountry.png" style="height:280px; margin-bottom:20px">
+          <p>Leading countries over all are Japan, US, China, Germany. Unfortunately, there's no sign of Switzerland for now...</p>
+        </center>
+      </div>
+      <div class="col-md-6">
+        <center>
+          <img src="./imgs/n_patentsyear.png" style="height:280px;  margin-bottom:20px">
+          <p style="text-align:center;"> There's a very distinctive flat trend during two periods : we can quickly note that they correspond
+            to World Wars</p>
+          </center>
+        </div>
+      </div class="col-md-12">
+
+      <div class="col-md-12" style="margin-bottom:100px">
+        <div class="alert alert-info" role="alert">
+          <strong>About our data</strong><br>
+          Our data was extracted from the <a href="https://www.epo.org/index.html"> European Patent Office (EPO)</a>.
+          The EPO offers on its web site several free services, including Espacenet
+          and Open Patent Services (OPS) for searching within more than
+          90 million patent documents from around the world and from the
+          19th century right up to today. We used their tool PATSTAT Online to query their database and export structured data.
+        </div>
+      </div>
+
+
+      <!-- PART 2 : YU -->
+
+      <h1 style="margin-bottom:20px;"> <i class="fa fa-globe"></i> World Patent Evolution </h1>
+      <div class="col-md-12">
+        <div class="jumbotron">
+          <p>Find below a visualization of both ....</p>
+        </div>
+      </div>
+      <div class="row">
+          <center>
+              <div class="col-md-12">
+                <h3> Have fun </h3><br>
+                <div>
+                    <i class="fa fa-step-backward fa-4x" onclick="previous1()"></i>&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-play-circle fa-4x" onclick="play1()"></i>&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-pause-circle fa-4x" onclick="pause1()"></i>&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-step-forward fa-4x" onclick="next1()"></i>&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-stop-circle fa-4x" onclick="stop1()"></i>
+                </div><br>
+                <div class="form">
+                    Year:
+                    <input type="text" id="year" value="" style="width:100px">&nbsp;&nbsp;
+                    <button type="button" class="btn btn-default" onclick="changeDate1()">Apply</button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h4>All the countries </h4><br>
+                  <img src="./WW/map1910_WW.png" style="height:350px;" id="slideshow1" alt="slideshow1" />
+
+              </div>
+          </center>
+          <center>
+              <div class="col-md-6">
+                  <h4>Zoom into CH and EU </h4><br>
+                  <img src="./CH/map1910_CH.png" style="height:350px;" id="slideshow2" alt="slideshow2" />
+              </div>
+          </center>
+      </div>
+
+      <!-- PART 3 : ARNAUD -->
+
+      <h1 style="margin-bottom:20px; margin-top:100px;"> <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Swiss Patent Topics </h1>
+
+      <div class="col-md-12">
+        <div class="jumbotron">
+          <p>What do patents talk about ? One could go manually over all the
+            patents, but we have nearly <strong>50'000</strong> of them. So we
+            tried to <strong>extract topics</strong> automatically on patents abstracts and visualize what
+            abstracts of patents were talking about. Our study here involves
+            <strong>25'000</strong> patents selected randomly from 1964 to 2013. All these patents applications
+            were done in Switzerland. Our full pipeline involves :
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          1. Natural Language Processing
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                      <div class="panel-body"> We have a few treatments to apply to our text data
+                        <ul>
+                          <li>Tokenize</li>
+                          <li>Normalize : put to lower case</li>
+                          <li>Lemmatize : keep only lemmas</li>
+                          <li>Filter out stop words</li>
+                          <li>Filter out some Part of Speech tags</li>
+                        </ul>
+
+                        We normalize the text data (put to lower capital), remove stop words and filter the part of speechs.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          2. Latent Dirichlet Allocation (LDA) for Topic Extraction
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                      <div class="panel-body">
+                        We apply a LDA topic extraction algorithm, seeking for
+                        <strong>30</strong> topics. Looking at the <i>topics per patent</i> distribution, we see that there are 17 trash topics. At that point
+                        we decided to remove them and also all the patents that were maximized by one of these topics. This reduced our data to 14,194 patents, and
+                        13 topics (there were also some duplicates). We describe below which of the 30 extracted topics are trash topics (in red) and assign
+                        a label to the remaining ones (green).<br><br>
+
+                        <table class="table table-condensed">
+                          <tr>
+                            <th>#</th>
+                            <th>Ranked keywords that describe most the topic</th>
+                            <th>Label</th>
+                          </tr>
+                          <tr class="success">
+
+                            <td>0</td>
+
+                            <td> use active substance agent composition cell plant contain animal treatment one comprise form andor also activity preparation contains method least</td>
+
+                            <td>life science</td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>1</td>
+
+                            <td> drive shaft wheel motor axis mount rotate rotation unit gear mechanism movement disc bearing brake rotor driven support rotary lever</td>
+
+                            <td>mechanics</td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>2</td>
+
+                            <td> element say invention least one device relates 1 comprise 2 mean comprises can 3 first wherein body area surface provide</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>3</td>
+
+                            <td> can use image possible without mean thus make order high result case reduce increase invention time small require achieve effect</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>4</td>
+
+                            <td> layer material sheet strip plastic cover film make form surface can adhesive one weld side paper use may coat apply</td>
+
+                            <td>materials</td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>5</td>
+
+                            <td> surface section edge two side form one angle end axis longitudinal face direction plane parallel groove low portion plate shape</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>6</td>
+
+                            <td> 12 14 10 11 13 15 20 16 18 17 21 22 19 23 24 25 26 mean image 30</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>7</td>
+
+                            <td> material product process water liquid solid dry particle mixture use mix phase form substance can powder method remove contain content</td>
+
+                            <td>materials</td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>8</td>
+
+                            <td> signal control switch circuit output connect power pulse supply voltage current frequency input unit energy line device via generator system</td>
+
+                            <td>electricity</td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>9</td>
+
+                            <td> plate frame element support wall side profile panel form 1 can 2 base one two part edge 3 cover connect</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>10</td>
+
+                            <td> dye resin polymer acid wt use fibre pref least material agent contain weight synthetic polyester contains polyamide esp andor may</td>
+
+                            <td>chemistry</td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>11</td>
+
+                            <td> data unit device module system information control network method store mobile user transmit receive one provide card use station computer</td>
+
+                            <td>information</td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>12</td>
+
+                            <td> light optical beam image source laser radiation cell lens lamp device screen use colour mirror solar transparent surface camera element</td>
+
+                            <td>optics</td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>13</td>
+
+                            <td> end tube ring screw sleeve outer inner body pipe thread 1 hole part head 3 2 bore cylindrical seal form</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>14</td>
+
+                            <td> measure sensor value device determine measurement signal method control test system sample point detect position reference target unit parameter</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>15</td>
+
+                            <td> roller yarn machine guide device thread conveyor belt roll direction transport move one feed needle transfer station convey end wind</td>
+
+                            <td>transport</td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>16</td>
+
+                            <td> air water gas heat flow chamber pipe filter outlet liquid channel heating supply nozzle tank inlet cool system tube connect</td>
+
+                            <td>thermodynamics</td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>17</td>
+
+                            <td> alkyl h formula r low r2 opt r1 cpds x substd r3 n halogen alkoxy y oh prepd r4 cpd</td>
+
+                            <td>chemistry</td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>18</td>
+
+                            <td> cut tool machine device workpiece 30 32 head 31 40 blade work guide 41 42 can 34 50 33 grind</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>19</td>
+
+                            <td> 1 2 3 4 5 6 7 8 9 image 10 11 mean part arrange 12 can 13 connect device</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>20</td>
+
+                            <td> support can position rail frame guide arm vehicle slide 1 mount vertical door two end lift pivot seat move cable</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>21</td>
+
+                            <td> layer surface metal material coat substrate include method form make independent claim structure alloy andor component </td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>22</td>
+
+                            <td> end part clamp plate lock spring position two element one pin fix can device arm 1 2 fasten hold strap</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>23</td>
+
+                            <td> container wall opening can cover 1 part side housing 2 open box bottom base closure 3 lid close top provide</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>24</td>
+
+                            <td> material mould produce cast metal core plastic form cavity make part use melt shape fill body injection process foam method</td>
+
+                            <td>materials</td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>25</td>
+
+                            <td> compound group formula image acid hydrogen atom prepared salt radical can substitute r1 represent obtain use correspond derivative 1 denotes</td>
+
+                            <td>chemistry</td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>26</td>
+
+                            <td> c acid pref degree deg reaction solvent b g ii salt give presence use temp catalyst metal soln ml add</td>
+
+                            <td>chemistry</td>
+
+                          </tr>
+                          <tr class="danger">
+
+                            <td>27</td>
+
+                            <td> first second watch display one time case two position third hand comprises part include hour movement unit zone set provide</td>
+
+                            <td></td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>28</td>
+
+                            <td> valve pressure chamber piston cylinder device housing pump fluid seal control liquid position connect member can outlet opening air membrane</td>
+
+                            <td>mechanics</td>
+
+                          </tr>
+                          <tr class="success">
+
+                            <td>29</td>
+
+                            <td> contact electrode wire coil connect magnetic electrical cable conductor current one circuit field connection magnet element two wind insulate pole</td>
+
+                            <td>electricity</td>
+
+                          </tr>
+                        </table>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          3. Supervised Dimension Reduction using Fischer Linear Discriminant Analysis
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                      <div class="panel-body">
+                        Now we wanted to visualize this data using a dimension reduction. Considering our task is <strong>supervised</strong> because we assign the
+                        topic that maximizes the <i>topics per patent</i> distribution, we can ask a <strong>supervised dimension reduction</strong> algorithm.
+                        That's exactly what <strong>Fischer Linear Discriminant Algorithm</strong> does. It projects the data into a lower-space where the split between
+                        classes is maximized.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          4. Visualization with Bokeh
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                      <div class="panel-body">
+                        <a href="http://bokeh.pydata.org/en/latest/">Bokeh</a> is a
+                        Python interactive visualization library that targets modern web browsers for presentation. Its goal is to provide
+                        elegant, concise construction of novel graphics in the style of D3.js, and to extend this capability with
+                        high-performance interactivity over very large or streaming datasets. Bokeh can help anyone who would
+                        like to quickly and easily create interactive plots, dashboards, and data applications.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <p>What's very interesting is to see that <strong>innovation travels from chemistry to information sciences...</strong></p>
+              </p>
+            </div>
+          </div>
+
+
+          <div class="col-md-3">
+            <h3> Total evolution </h3><br>
+            <div style="margin-left:36px">
+
+              <i class="fa fa-step-backward fa-3x" onclick="previous()"></i>&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-play-circle fa-3x" onclick="play()"></i>&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-pause-circle fa-3x" onclick="pause()"></i>&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-step-forward fa-3x" onclick="next()"></i>&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-stop-circle fa-3x" onclick="stop()"></i>
+            </div>
+            <br>
+            <img src="./imgs/1964.png" style="height:220px;" id="slideshow" alt="slideshow" />
+
+            <div class="alert alert-info" style="margin:60px -50px 0px 20px;">
+              <strong>Developed for Applied Data Analysis course @ EPFL</strong><br><br>
+              Soufiane El Badraoui<br>
+              Arnaud Miribel<br>
+              Yu Yamashita<br><br>
+
+              See more <a href="http://ada.epfl.ch"> here</a> or <i class="fa fa-github" aria-hidden="true"></i> <a href="http://www.github.com/arnaudmiribel/ada_project/">here</a>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-9">
+            <h3 style="margin-left:88px"> <i class="icon-zoom-in"></i> Zoom into one year </h3>
+            <div class="form" style="margin-left:88px">
+              Year:<br>
+              <input type="text" id="year" value="" style="width:100px">&nbsp;&nbsp;
+              <button type="button" class="btn btn-default" onclick="changeDate()">
+                Apply
+              </button>
+            </div>
+
+            <iframe src="frames/1964.html" style="height:700px; width:800px" id="frameshow" alt="frameshow" frameBorder="0"/>
+          </div>
+
+        </div>
+
+      </body>
+      </html>
