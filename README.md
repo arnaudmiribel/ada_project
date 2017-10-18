@@ -3,7 +3,6 @@
 
 
 | Soufiane El Badraoui | Arnaud Miribel | Yu Yamashita |
-|:---:|:---:|:---:|:---:|
 
 
 ## Report :
